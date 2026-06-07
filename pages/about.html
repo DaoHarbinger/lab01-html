@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сторінка 'Про мене' з прикладами вбудованого відео та аудіо.">
+    <title>Про мене – медіа приклади</title>
+    <script src="../js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Головна</a> |
+            <a href="about.html">Про мене</a> |
+            <a href="contact.html">Контакти</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Про мене та мої медіа</h1>
+        <p>Вітаю! Я захоплююсь створенням веб-сайтів, а ще люблю знімати короткі відео та слухати музику під час роботи. Нижче наведено приклади відео та аудіо, які ілюструють мої вподобання.</p>
+
+        <h2>🎬 Відео-презентація</h2>
+        <video controls width="640" poster="https://picsum.photos/id/20/640/360">
+            <!-- Джерела відео: MP4 та WebM для сумісності -->
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4" type="video/mp4">
+            <source src="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/pexels-koolshooters-7324441%20(Original).webm" type="video/webm">
+            <!-- Fallback текст -->
+            <p>Ваш браузер не підтримує HTML5 відео. 
+               <a href="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4">Завантажити відео (MP4)</a>
+            </p>
+        </video>
+        <p><em>Коротке відео про автомобілі – для прикладу вбудованого контенту.</em></p>
+
+        <h2>🎵 Аудіо для настрою</h2>
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+            <source src="https://www.soundhelix.com/examples/ogg/SoundHelix-Song-2.ogg" type="audio/ogg">
+            <p>Ваш браузер не підтримує аудіо. 
+               <a href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Завантажити аудіо (MP3)</a>
+            </p>
+        </audio>
+        <p><em>Ліцензійна музика від SoundHelix – фон для продуктивної роботи.</em></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Федоренко Олександр. Медіа взяті з відкритих джерел для навчальних цілей.</p>
+    </footer>
+</body>
+</html>

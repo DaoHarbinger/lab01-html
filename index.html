@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Мій перший HTML-сайт: навчальний проєкт з основами семантичної верстки, таблиць, списків та зображень.">
+    <title>Мій перший HTML-сайт</title>
+    <!-- Підключення бонусного JS (defer – виконається після завантаження DOM) -->
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Головна</a> |
+            <a href="pages/about.html">Про мене</a> |
+            <a href="pages/contact.html">Контакти</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Ласкаво просимо на мій перший HTML-сайт!</h1>
+        
+        <h2>Трохи про мене</h2>
+        <p>Мене звати <strong>Олександр</strong>, і я вивчаю <em>Front-end розробку</em>. Цей сайт створено в межах практичної роботи №1 з HTML.</p>
+        <p>Я захоплююсь веб-технологіями, люблю створювати зручні інтерфейси та пізнавати нове. <strong>Моя мета</strong> – стати професійним розробником.</p>
+        <p>На цій сторінці ви побачите приклади списків, таблиці та зображення з підписом.</p>
+
+        <h2>Мої улюблені технології</h2>
+        <ul>
+            <li>HTML5 – семантична розмітка</li>
+            <li>CSS3 – flexbox, grid, анімації</li>
+            <li>JavaScript – динаміка на сайті</li>
+            <li>React / Vue – сучасні фреймворки</li>
+        </ul>
+
+        <h2>План навчання на цей місяць</h2>
+        <ol>
+            <li>Основи HTML – завершити</li>
+            <li>Поглиблений CSS (адаптив, анімації)</li>
+            <li>JavaScript: DOM events, fetch API</li>
+            <li>Створення власного пет-проєкту</li>
+        </ol>
+
+        <h2>Улюблений стек технологій</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption>Порівняння технологій</caption>
+            <thead>
+                <tr>
+                    <th>Категорія</th>
+                    <th>Технологія</th>
+                    <th>Рівень володіння</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Мова розмітки</td>
+                    <td>HTML5</td>
+                    <td>⭕⭕⭕⭕⭕</td>
+                </tr>
+                <tr>
+                    <td>Стилізація</td>
+                    <td>CSS3</td>
+                    <td>⭕⭕⭕⭕⭕</td>
+                </tr>
+                <tr>
+                    <td>Мова програмування</td>
+                    <td>JavaScript</td>
+                    <td>⭕⭕⭕⭕⭕</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Моє робоче місце</h2>
+        <figure>
+            <img src="https://picsum.photos/id/0/5616/3744" alt="Робочий стіл із ноутбуком" width="500" height="333">
+            <figcaption>Моє улюблене місце для кодування 😊</figcaption>
+        </figure>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Федоренко Олександр. Всі права захищено.</p>
+    </footer>
+</body>
+</html>
