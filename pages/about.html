@@ -3,65 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Сторінка 'Про мене' з відео, аудіо та Flexbox-композицією.">
     <title>Про мене | Федоренко Олександр</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/responsive.css">
-    <script src="../js/app.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <div class="site-header">
         <div class="container header-container">
             <div class="logo"><a href="../index.html">Олександр Федоренко</a></div>
-            <nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Меню">☰</button>
+            <nav id="mainNav">
                 <ul class="nav-list">
                     <li><a href="../index.html">Головна</a></li>
-                    <li><a href="about.html" class="active">Про мене</a></li>
+                    <li><a href="about.html">Про мене</a></li>
                     <li><a href="contact.html">Контакти</a></li>
                 </ul>
             </nav>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
         </div>
     </div>
 
     <main>
         <div class="container">
-            <h1>Про мене та мої медіа</h1>
-            <p>Вітаю! Я захоплююсь створенням веб-сайтів, а ще люблю знімати короткі відео та слухати музику під час роботи. Нижче наведено приклади відео та аудіо, які ілюструють мої вподобання.</p>
+            <h1>Про мене</h1>
+            <p>Вітаю! Я студент, захоплююсь веб-розробкою. На цій сторінці ви можете побачити приклади відео та аудіо.</p>
 
-            <!-- Flexbox-блок: відео та аудіо поруч (на десктопі) -->
+            <!-- Flexbox-блок з медіа -->
             <div class="media-flex">
                 <div class="media-item">
                     <h3>🎬 Відео-презентація</h3>
-                    <video controls width="100%" poster="https://picsum.photos/id/20/640/360">
+                    <video controls width="100%">
                         <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4" type="video/mp4">
                         <source src="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/pexels-koolshooters-7324441%20(Original).webm" type="video/webm">
-                        <p>Ваш браузер не підтримує HTML5 відео. <a href="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4">Завантажити відео (MP4)</a></p>
+                        <p>Ваш браузер не підтримує відео. <a href="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4">Завантажити</a></p>
                     </video>
-                    <p><em>Коротке відео про автомобілі – для прикладу вбудованого контенту.</em></p>
                 </div>
-
                 <div class="media-item">
                     <h3>🎵 Аудіо для настрою</h3>
                     <audio controls>
                         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
                         <source src="https://www.soundhelix.com/examples/ogg/SoundHelix-Song-2.ogg" type="audio/ogg">
-                        <p>Ваш браузер не підтримує аудіо. <a href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Завантажити аудіо (MP3)</a></p>
+                        <p>Ваш браузер не підтримує аудіо. <a href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Завантажити</a></p>
                     </audio>
-                    <p><em>Ліцензійна музика від SoundHelix – фон для продуктивної роботи.</em></p>
                 </div>
             </div>
 
+            <!-- Додатковий акордеон (опційно, але для демонстрації) -->
             <div class="card">
                 <h3>Чому я обрав Front-end?</h3>
-                <p>Front-end дозволяє миттєво бачити результат своєї роботи – достатньо оновити сторінку в браузері. Крім того, це поєднання творчості (дизайн, анімації) та логіки (JavaScript, API). Я отримую задоволення, коли вдається зробити інтерфейс зручним та гарним.</p>
+                <p>Front-end дозволяє миттєво бачити результат своєї роботи, поєднує творчість та логіку.</p>
             </div>
         </div>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Федоренко Олександр Романович, група 232/1</p>
+            <p>&copy; 2026 Федоренко Олександр, група 232/1</p>
         </div>
     </footer>
+
+    <button id="backToTop" class="back-to-top">⬆</button>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img id="modalImg" src="" alt="Збільшене зображення">
+        </div>
+    </div>
 </body>
 </html>

@@ -3,103 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Мій перший HTML-сайт – головна сторінка з інформацією про технології, навчання та захоплення.">
+    <meta name="description" content="Головна сторінка – портфоліо Федоренка Олександра">
     <title>Головна | Федоренко Олександр</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/responsive.css">
-    <script src="./js/app.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </head>
 <body>
-    <!-- ШАПКА З НАВІГАЦІЄЮ -->
+    <!-- ШАПКА -->
     <div class="site-header">
         <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">Олександр Федоренко</a>
-            </div>
-            <nav>
+            <div class="logo"><a href="index.html">Олександр Федоренко</a></div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Меню">☰</button>
+            <nav id="mainNav">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Головна</a></li>
+                    <li><a href="index.html">Головна</a></li>
                     <li><a href="pages/about.html">Про мене</a></li>
                     <li><a href="pages/contact.html">Контакти</a></li>
                 </ul>
             </nav>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
         </div>
     </div>
 
-    <!-- ОСНОВНИЙ КОНТЕНТ -->
     <main>
         <div class="container">
-            <h1>Ласкаво просимо на мій перший HTML-сайт!</h1>
-            
+            <h1>Ласкаво просимо на мій сайт!</h1>
             <section class="section">
                 <h2>Трохи про мене</h2>
-                <p>Мене звати <strong>Федоренко Олександр</strong>, я студент групи <strong>232/1</strong>. Вивчаю <em>Front-end розробку</em>. Цей сайт створено в межах практичної роботи №1 з HTML та №2 з CSS.</p>
-                <p>Я захоплююсь веб-технологіями, люблю створювати зручні інтерфейси та пізнавати нове. Моя мета – стати професійним розробником і створювати корисні веб-продукти.</p>
-                <p>На цій сторінці ви побачите приклади списків, таблиці та зображення з підписом.</p>
+                <p>Мене звати <strong>Федоренко Олександр</strong>, я студент групи <strong>232/1</strong>. Вивчаю Front-end розробку. Цей сайт — результат практичних робіт з HTML, CSS та JavaScript.</p>
             </section>
 
+            <!-- Блок навичок (картки) – для фільтрації -->
             <section class="section">
-                <h2>Мої улюблені технології</h2>
-                <ul>
-                    <li>HTML5 – семантична розмітка</li>
-                    <li>CSS3 – flexbox, grid, анімації</li>
-                    <li>JavaScript – динаміка на сайті</li>
-                    <li>React / Vue – сучасні фреймворки</li>
-                </ul>
-            </section>
-
-            <section class="section">
-                <h2>План навчання на цей місяць</h2>
-                <ol>
-                    <li>Основи HTML – завершено</li>
-                    <li>Поглиблений CSS (адаптив, анімації)</li>
-                    <li>JavaScript: DOM events, fetch API</li>
-                    <li>Створення власного пет-проєкту</li>
-                </ol>
-            </section>
-
-            <section class="section">
-                <h2>Улюблений стек технологій</h2>
-                <div class="table-wrapper">
-                    <table>
-                        <caption>Порівняння технологій</caption>
-                        <thead>
-                            <tr><th>Категорія</th><th>Технологія</th><th>Рівень володіння</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Мова розмітки</td><td>HTML5</td><td>★★★★★</td></tr>
-                            <tr><td>Стилізація</td><td>CSS3</td><td>★★★★☆</td></tr>
-                            <tr><td>Мова програмування</td><td>JavaScript</td><td>★★★☆☆</td></tr>
-                        </tbody>
-                    </table>
+                <h2>Мої навички</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Всі</button>
+                    <button class="filter-btn" data-filter="frontend">Front-end</button>
+                    <button class="filter-btn" data-filter="tools">Інструменти</button>
+                </div>
+                <div class="cards-grid" id="skillsGrid">
+                    <div class="card" data-category="frontend"><h3>HTML/CSS</h3><p>Адаптивна верстка, Flexbox, Grid, анімації.</p></div>
+                    <div class="card" data-category="frontend"><h3>JavaScript</h3><p>ES6, DOM, події, fetch, async/await.</p></div>
+                    <div class="card" data-category="tools"><h3>Git & GitHub</h3><p>Контроль версій, робота з гілками, pull requests.</p></div>
+                    <div class="card" data-category="tools"><h3>VS Code</h3><p>Редактор коду, плагіни, налаштування.</p></div>
                 </div>
             </section>
 
+            <!-- Акордеон (FAQ) -->
+            <section class="section">
+                <h2>❓ Часті запитання</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Який у мене досвід програмування?</button>
+                        <div class="accordion-content"><p>Вивчаю Front-end понад 6 місяців. Маю досвід роботи з HTML/CSS, JavaScript, React (базовий).</p></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Чи беру я замовлення на верстку?</button>
+                        <div class="accordion-content"><p>Так, але навчальні проєкти. Звертайтесь через форму на сторінці "Контакти".</p></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Які інструменти використовую?</button>
+                        <div class="accordion-content"><p>VS Code, Git, Figma, Chrome DevTools, WebStorm.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Зображення для модального вікна -->
             <section class="section">
                 <h2>Моє робоче місце</h2>
                 <figure>
-                    <img src="https://picsum.photos/id/0/5616/3744" alt="Робочий стіл із ноутбуком" width="500" height="333">
-                    <figcaption>Моє улюблене місце для кодування 😊</figcaption>
+                    <img src="https://picsum.photos/id/0/5616/3744" alt="Робочий стіл" class="modal-trigger" style="cursor:pointer; width:100%; max-width:500px;">
+                    <figcaption>Натисніть на фото, щоб збільшити</figcaption>
                 </figure>
-            </section>
-
-            <!-- Бонусний блок із картками (Grid, можна додати за бажанням) -->
-            <section class="section">
-                <h2>Мої навички</h2>
-                <div class="cards-grid">
-                    <div class="card"><h3>HTML/CSS</h3><p>Створення адаптивних макетів, Flexbox, Grid.</p></div>
-                    <div class="card"><h3>JavaScript</h3><p>Основи, робота з DOM, події, асинхронність.</p></div>
-                    <div class="card"><h3>Git & GitHub</h3><p>Контроль версій, робота з гілками, Pull Requests.</p></div>
-                </div>
             </section>
         </div>
     </main>
 
-    <!-- ПІДВАЛ -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Федоренко Олександр Романович, група 232/1. Всі права захищено.</p>
+            <p>&copy; 2026 Федоренко Олександр, група 232/1</p>
         </div>
     </footer>
+
+    <!-- Кнопка "Вгору" та модальне вікно -->
+    <button id="backToTop" class="back-to-top" aria-label="Наверх">⬆</button>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img id="modalImg" src="" alt="Збільшене зображення">
+        </div>
+    </div>
 </body>
 </html>
