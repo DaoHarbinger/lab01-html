@@ -1,0 +1,386 @@
+
+/* ---------- ЗМІННІ (дизайн-система) ---------- */
+:root {
+    --color-primary: #1d4e89;      /* основний колір (шапка, кнопки) */
+    --color-accent: #ffb703;       /* акцентний (hover, активи) */
+    --color-bg: #f7f9fc;           /* фон сторінки */
+    --color-surface: #ffffff;      /* фон карток, форми */
+    --color-text: #1f2937;         /* колір тексту */
+    --color-border: #d9e2ec;       /* колір меж */
+    --color-footer: #0f2c3d;       /* фон футера */
+    --border-radius: 12px;         /* заокруглення */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --transition: 0.2s ease-in-out;
+}
+
+/* ---------- ГЛОБАЛЬНІ СТИЛІ ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Контейнер для обмеження ширини */
+.container {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Головна частина розтягується, щоб футер був внизу */
+main {
+    flex: 1;
+}
+
+/* ---------- HEADER ТА НАВІГАЦІЯ ---------- */
+.site-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 0;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+/* Горизонтальне меню (Flexbox) */
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color var(--transition);
+    border-bottom: 2px solid transparent;
+}
+
+.nav-list a:hover {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.nav-list a.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+    background: var(--color-footer);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* ---------- ЗАГОЛОВКИ ТА ТЕКСТ ---------- */
+h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0f2c3d;
+    border-left: 5px solid var(--color-accent);
+    padding-left: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ---------- СПИСКИ ---------- */
+ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+/* ---------- ТАБЛИЦЯ ---------- */
+.table-wrapper {
+    overflow-x: auto;   /* для адаптивності */
+    margin: 1.5rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background: var(--color-primary);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tr:hover {
+    background-color: #eef2ff;
+}
+
+/* ---------- ЗОБРАЖЕННЯ ТА FIGURE ---------- */
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+    background: var(--color-surface);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #475569;
+}
+
+/* ---------- КАРТКИ ТА СЕКЦІЇ ---------- */
+.card {
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--color-border);
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+/* ---------- СТОРІНКА ABOUT (МЕДІА ТА FLEXBOX) ---------- */
+.media-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.media-item {
+    flex: 1;
+    min-width: 250px;
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.media-item h3 {
+    margin-top: 0;
+}
+
+video, audio {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+/* ---------- СТОРІНКА CONTACT (ФОРМА) ---------- */
+.form-card {
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    margin: 1rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(29, 78, 137, 0.2);
+}
+
+/* Стиль для обов'язкових полів (не обов'язково, але приємно) */
+input:required:valid, select:required:valid, textarea:required:valid {
+    border-left: 4px solid #22c55e;
+}
+
+input:required:invalid:not(:placeholder-shown), 
+textarea:required:invalid:not(:placeholder-shown) {
+    border-left: 4px solid #ef4444;
+}
+
+fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}
+
+.radio-group label, .checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: normal;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.3rem;
+}
+
+button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition), transform 0.1s;
+}
+
+button:hover {
+    background: #0f3b60;
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button[type="reset"] {
+    background: #94a3b8;
+    margin-left: 1rem;
+}
+
+button[type="reset"]:hover {
+    background: #64748b;
+}
+
+/* Бонусна кнопка (з JS) */
+.bonus-btn {
+    display: block;
+    margin: 2rem auto;
+    background: #f59e0b;
+}
+
+.bonus-btn:hover {
+    background: #d97706;
+}
+
+/* ---------- ДОДАТКОВІ КЛАСИ ДЛЯ GRID  ---------- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* ---------- ДОПОМІЖНІ КЛАСИ ---------- */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}

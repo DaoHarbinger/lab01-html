@@ -3,48 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Сторінка 'Про мене' з прикладами вбудованого відео та аудіо.">
-    <title>Про мене – медіа приклади</title>
+    <meta name="description" content="Сторінка 'Про мене' з відео, аудіо та Flexbox-композицією.">
+    <title>Про мене | Федоренко Олександр</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
     <script src="../js/app.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../index.html">Головна</a> |
-            <a href="about.html">Про мене</a> |
-            <a href="contact.html">Контакти</a>
-        </nav>
-    </header>
+    <div class="site-header">
+        <div class="container header-container">
+            <div class="logo"><a href="../index.html">Олександр Федоренко</a></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Головна</a></li>
+                    <li><a href="about.html" class="active">Про мене</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <main>
-        <h1>Про мене та мої медіа</h1>
-        <p>Вітаю! Я захоплююсь створенням веб-сайтів, а ще люблю знімати короткі відео та слухати музику під час роботи. Нижче наведено приклади відео та аудіо, які ілюструють мої вподобання.</p>
+        <div class="container">
+            <h1>Про мене та мої медіа</h1>
+            <p>Вітаю! Я захоплююсь створенням веб-сайтів, а ще люблю знімати короткі відео та слухати музику під час роботи. Нижче наведено приклади відео та аудіо, які ілюструють мої вподобання.</p>
 
-        <h2>🎬 Відео-презентація</h2>
-        <video controls width="640" poster="https://picsum.photos/id/20/640/360">
-            <!-- Джерела відео: MP4 та WebM для сумісності -->
-            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4" type="video/mp4">
-            <source src="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/pexels-koolshooters-7324441%20(Original).webm" type="video/webm">
-            <!-- Fallback текст -->
-            <p>Ваш браузер не підтримує HTML5 відео. 
-               <a href="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4">Завантажити відео (MP4)</a>
-            </p>
-        </video>
-        <p><em>Коротке відео про автомобілі – для прикладу вбудованого контенту.</em></p>
+            <!-- Flexbox-блок: відео та аудіо поруч (на десктопі) -->
+            <div class="media-flex">
+                <div class="media-item">
+                    <h3>🎬 Відео-презентація</h3>
+                    <video controls width="100%" poster="https://picsum.photos/id/20/640/360">
+                        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4" type="video/mp4">
+                        <source src="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/pexels-koolshooters-7324441%20(Original).webm" type="video/webm">
+                        <p>Ваш браузер не підтримує HTML5 відео. <a href="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCar.mp4">Завантажити відео (MP4)</a></p>
+                    </video>
+                    <p><em>Коротке відео про автомобілі – для прикладу вбудованого контенту.</em></p>
+                </div>
 
-        <h2>🎵 Аудіо для настрою</h2>
-        <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
-            <source src="https://www.soundhelix.com/examples/ogg/SoundHelix-Song-2.ogg" type="audio/ogg">
-            <p>Ваш браузер не підтримує аудіо. 
-               <a href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Завантажити аудіо (MP3)</a>
-            </p>
-        </audio>
-        <p><em>Ліцензійна музика від SoundHelix – фон для продуктивної роботи.</em></p>
+                <div class="media-item">
+                    <h3>🎵 Аудіо для настрою</h3>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+                        <source src="https://www.soundhelix.com/examples/ogg/SoundHelix-Song-2.ogg" type="audio/ogg">
+                        <p>Ваш браузер не підтримує аудіо. <a href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Завантажити аудіо (MP3)</a></p>
+                    </audio>
+                    <p><em>Ліцензійна музика від SoundHelix – фон для продуктивної роботи.</em></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Чому я обрав Front-end?</h3>
+                <p>Front-end дозволяє миттєво бачити результат своєї роботи – достатньо оновити сторінку в браузері. Крім того, це поєднання творчості (дизайн, анімації) та логіки (JavaScript, API). Я отримую задоволення, коли вдається зробити інтерфейс зручним та гарним.</p>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Федоренко Олександр. Медіа взяті з відкритих джерел для навчальних цілей.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Федоренко Олександр Романович, група 232/1</p>
+        </div>
     </footer>
 </body>
 </html>

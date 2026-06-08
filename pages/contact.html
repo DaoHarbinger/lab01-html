@@ -3,114 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Форма зворотного зв'язку з валідацією HTML5.">
-    <title>Контакти – зв'яжіться зі мною</title>
+    <meta name="description" content="Форма зворотного зв'язку з валідацією HTML5 та стилізацією CSS.">
+    <title>Контакти | Федоренко Олександр</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
     <script src="../js/app.js" defer></script>
-    <style>
-        /* Невеликі базові стилі для зручності (не обов'язково, але покращує вигляд) */
-        form {
-            max-width: 600px;
-            margin: 20px 0;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        label {
-            display: inline-block;
-            width: 180px;
-            vertical-align: top;
-        }
-        input, select, textarea {
-            margin-bottom: 12px;
-            padding: 6px;
-            width: 250px;
-        }
-        .radio-group label {
-            width: auto;
-            margin-right: 15px;
-        }
-        button {
-            margin-top: 10px;
-            padding: 8px 20px;
-            background: #2c7da0;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #1f5068;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../index.html">Головна</a> |
-            <a href="about.html">Про мене</a> |
-            <a href="contact.html">Контакти</a>
-        </nav>
-    </header>
+    <div class="site-header">
+        <div class="container header-container">
+            <div class="logo"><a href="../index.html">Олександр Федоренко</a></div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Головна</a></li>
+                    <li><a href="about.html">Про мене</a></li>
+                    <li><a href="contact.html" class="active">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <main>
-        <h1>Зв'яжіться зі мною</h1>
-        <p>Заповніть форму нижче – я відповім якнайшвидше. Усі поля з <strong>*</strong> є обов'язковими.</p>
+        <div class="container">
+            <h1>Зв'яжіться зі мною</h1>
+            <p>Заповніть форму нижче – я відповім якнайшвидше. Поля з <strong>*</strong> є обов'язковими.</p>
 
-        <form action="#" method="get" id="contactForm">
-            <!-- Ім'я -->
-            <p>
-                <label for="name">Ім'я *:</label>
-                <input type="text" id="name" name="name" required minlength="2" maxlength="30" placeholder="Олександр">
-            </p>
-            <!-- Email -->
-            <p>
-                <label for="email">Email *:</label>
-                <input type="email" id="email" name="email" required placeholder="oleksandr@example.com">
-            </p>
-            <!-- Телефон (необов'язково) -->
-            <p>
-                <label for="phone">Телефон:</label>
-                <input type="tel" id="phone" name="phone" placeholder="+380501234567">
-            </p>
-            <!-- Тема (select) -->
-            <p>
-                <label for="topic">Тема звернення *:</label>
-                <select id="topic" name="topic" required>
-                    <option value="">Оберіть тему</option>
-                    <option value="study">Навчання / Курси</option>
-                    <option value="work">Співпраця / Робота</option>
-                    <option value="other">Інше</option>
-                </select>
-            </p>
-            <!-- Радіокнопки: спосіб зв'язку -->
-            <fieldset>
-                <legend>Зручний спосіб зв'язку:</legend>
-                <label><input type="radio" name="contactWay" value="email" checked> Email</label>
-                <label><input type="radio" name="contactWay" value="phone"> Телефон</label>
-            </fieldset>
-            <!-- Повідомлення textarea -->
-            <p>
-                <label for="message">Повідомлення *:</label>
-                <textarea id="message" name="message" rows="5" cols="30" required minlength="10" placeholder="Напишіть ваше повідомлення..."></textarea>
-            </p>
-            <!-- Чекбокс згоди -->
-            <p>
-                <label>
-                    <input type="checkbox" name="agree" required>
-                    Погоджуюсь з <a href="#">правилами обробки даних</a> *
-                </label>
-            </p>
-            <!-- Кнопки -->
-            <p>
-                <button type="submit">Надіслати</button>
-                <button type="reset" style="background:#aaa;">Очистити</button>
-            </p>
-        </form>
-        <p><small>* після натискання "Надіслати" дані з'являться в адресному рядку (метод GET) – це навчальний приклад, серверної обробки немає.</small></p>
+            <div class="form-card">
+                <form action="#" method="get">
+                    <!-- Ім'я -->
+                    <div class="form-group">
+                        <label for="name">Ім'я *</label>
+                        <input type="text" id="name" name="name" required minlength="2" maxlength="30" placeholder="Федоренко Олександр">
+                    </div>
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="oleksandr@example.com">
+                    </div>
+                    <!-- Телефон (необов'язково) -->
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+380501234567">
+                    </div>
+                    <!-- Тема звернення (select) -->
+                    <div class="form-group">
+                        <label for="topic">Тема звернення *</label>
+                        <select id="topic" name="topic" required>
+                            <option value="">Оберіть тему</option>
+                            <option value="study">Навчання / Курси</option>
+                            <option value="work">Співпраця / Робота</option>
+                            <option value="other">Інше</option>
+                        </select>
+                    </div>
+                    <!-- Радіокнопки: зручний спосіб зв'язку -->
+                    <fieldset>
+                        <legend>Зручний спосіб зв'язку</legend>
+                        <div class="radio-group">
+                            <label><input type="radio" name="contactWay" value="email" checked> Email</label>
+                            <label><input type="radio" name="contactWay" value="phone"> Телефон</label>
+                        </div>
+                    </fieldset>
+                    <!-- Повідомлення textarea -->
+                    <div class="form-group">
+                        <label for="message">Повідомлення *</label>
+                        <textarea id="message" name="message" rows="5" required minlength="10" placeholder="Напишіть ваше повідомлення..."></textarea>
+                    </div>
+                    <!-- Чекбокс згоди -->
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" name="agree" required>
+                            Погоджуюсь з <a href="#">правилами обробки даних</a> *
+                        </label>
+                    </div>
+                    <!-- Кнопки -->
+                    <div class="form-group">
+                        <button type="submit">Надіслати</button>
+                        <button type="reset">Очистити</button>
+                    </div>
+                </form>
+            </div>
+            <p><small>* метод GET – дані з'являться в адресному рядку (навчальний приклад, серверної обробки немає).</small></p>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Федоренко Олександр</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Федоренко Олександр Романович, група 232/1</p>
+        </div>
     </footer>
 </body>
 </html>
